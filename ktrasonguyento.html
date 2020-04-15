@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function isPrime(number) {
+        if (number < 2) {
+            //phủ định số nhập vào sai
+            return false;
+        } else {
+            for (i = 2; i <= Math.sqrt(number); i++) {
+                if (number % i == 0) {
+                    //phủ định số nhập vào sai
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    // number = +prompt("nhập số cần kiểm tra");
+    // if (isPrime(number) == true) {
+    //   alert(number + " là số nguyên tố ");
+    //} else {
+    //    alert(number + " không phải số nguyên tố ");
+    // }
+    function displayPrime(oreca) {
+        //biến này để đếm xem số lượng lượng số nguyên tố cần in ra đã bằng numbers hay chưa.
+        let count = 0;
+        //biến này để kiểm tra xem các giá trị nó nhận được có phải là số nguyên tố không
+        let i = 2;
+        //lặp cho den khi count = oreca
+        while (count < oreca) {
+            if (isPrime(i) == true) {
+                document.write(i + "; ");
+                count++
+            }
+            i++;
+        }
+    }
+    let oreca = +prompt("nhập số lượng số cần hiển thị");
+    // hien thi số mình cần hiện
+    displayPrime(oreca);
+</script>
+</body>
+</html>
